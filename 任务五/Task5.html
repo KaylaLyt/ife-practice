@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Task5</title>
+	<style>
+	body{
+		background-color:gainsboro;
+	}
+	#logo{
+		height: 50px;
+		width: 100px;
+		float: left;
+	}
+	#guide{
+		background-color: white;
+		height: 50px;
+		clear: both;
+	}
+	#guide li{
+		float: right;
+		margin-top: 10px;
+		margin-right: 50px;
+		font-size: large;
+	}
+	.sec{
+		background-color: white;
+		border-style: outset;
+		border-color: white;
+		margin: 10px;
+	}
+	.sec ul{
+		list-style: none;
+	}
+	.pic{
+		width: 200px;
+		height: 0 auto;
+	}
+	#mid{
+		display: flex;
+		border: 2px solid black;
+	}
+	#bottom{
+		height: 300px;
+		border-style: outset;
+		border-color: white;
+		background-color: white;
+		margin: 10px;
+		float: right;
+	}
+	
+	button{
+		background-color: deepskyblue;
+	}
+	#left{
+		float: left;
+	}
+	#last{
+		background-color: black;
+		width: 100%;
+		height: 40px;
+		margin: 10px 0px;
+		text-align: center;
+		font-size: small;
+		color: white;
+	}
+	.kon{
+		clear: both;
+	}
+	</style>
+	</head>
+	<body>
+		<div id="guide">
+			<div id="logo">
+				<img src="bd_logo1.png" height="50px" width="100px"/>
+			</div>
+			<ul>
+				<li><a href="#">导航3</a></li>
+				<li><a href="#">导航2</a></li>
+				<li><a href="#">导肮1</a></li>
+			</ul>
+		</div>
+		<div id="mid">
+			
+			<div id="left">
+			<div>
+			<div class="sec">
+				<div>
+					<p>这是一个段落（含图片）</p>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<img src="http://upload.mnw.cn/2017/0213/1486954665862.jpg" class="pic"/>
+					<p>最近我很喜欢<a href="http://baike.baidu.com/link?url=Fp_lSxVrDaHPBw2kjOrXkvf82NwIGlgTV7VJio86ws0-pRhYD6-ZOFNrbRQH3Jt092_1f8TOJ4DXSyLmo7FezTjqLcv38IBcb0W1oF13YyRDrRkKWFDrBi7K8idDKrM0">鹦鹉兄弟</a>，我认为它们当真是很可爱</p>
+				</div>
+			<div class="kon"></div>
+			</div>
+			<div class="sec">
+				<p><strong>这是表格及标签</strong></p>
+				<p><center><big>我在中间</big></center></p>
+				<table border="1">我是表格
+					<tr>
+						<td>第一列</td>
+						<td>第二列</td>
+					</tr>
+					<tr>
+					<td>第二行啦啦啦</td>
+					</tr>
+				</table>
+				<p>有序标签：</p>
+				<ol>
+					<li>排名1</li>
+					<li>排名2</li>
+				</ol>
+				<p>无序标签：</p>
+				<ul>
+					<li>无</li>
+					<li>小</li>
+					<li>黑</li>
+					<li>点</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<table>
+				<tr>
+			    	<td>所在地:</td>
+			    	<td>	
+			    		<select >
+					    	<option>中国</option>
+							<option>非中国</option>
+			    		</select>
+			    	</td>
+			    	<td>
+						<input type="text"/>
+					</td>
+			    	<td>	
+						<button>获取短信验证码</button>
+					</td>
+				</tr>
+			</table>	
+			<textarea >这是文本输入框</textarea>
+			<table>
+				<tr>
+				    <td align="right">性别:</td>
+				    <td>
+				        男<input type="radio" name="sex"/>
+				        女<input type="radio" name="sex"/>
+				    </td>
+			    </tr>
+			    <tr>
+					<td align="right">密码:</td>
+					<td><input type="password"/></td>
+					<td><small>这是密码输入框噢</small></td>
+				</tr>
+			    <tr>
+					<td align="right"><input type="checkbox" name="1"></input></td>
+					<td>同时开通</td>
+				</tr>	
+				<tr>
+					<td align="right"><input type="checkbox"  name="1"/></input></td>
+					<td>我已阅读...</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		<div id="last">
+			版权所有@
+		</div>
+	</body>
+</html>
