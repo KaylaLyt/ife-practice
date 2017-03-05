@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Task6</title>
-				<style>
+
 			#all{
 				border: 1px red solid;
 				height: 1386px;
@@ -321,9 +316,6 @@
 			}
 			#sy{
 				float: left;
-				position: relative;
-				top:25px;
-				right: 30px;
 			}
 			.yh{
 				font-size: 72px;
@@ -345,111 +337,3 @@
 				margin-top: 20px;
 				text-align: right;
 			}
-		</style>
-	</head>
-	<body>
-		<div id="all">
-			<div id="top">
-				<div id="hk"><div style="margin-top: 49px;">ife.baidu.com</div></div>
-				<div id="sz"><div style="margin-top: 49px;">2016.03</div></div>
-			</div>
-			<div id="p1">
-				<div id="p1l">
-					<div id="p1ll"></div>
-					<div id="p1lr"></div>
-				</div>
-				<div id="p1r">
-					<div id="lar">ABOUT TECHNOLOGE</div>
-					<div id="sma">About technologe about technologe about technologe</div>
-					<div id="num">
-						700
-					</div>
-					<div id="ne">
-						<div id="fig">3.2</div>
-						<div id="csss">
-							<div id="css">css</div>
-							<div id="cssr">csscsscss</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="p2">
-				<div id="what">
-					<div class="wwh" id="bwhat">What</div>
-					<div id="dq1">
-						<p>端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前</p>
-					</div>
-				</div>
-				<div id="when">
-					<div class="wwh" id="bwhen">When</div>
-					<div id="dq2">
-						<p>端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前</p>
-					</div>
-				</div>
-				<div id="how">
-					<div class="wwh" id="bhow">How</div>
-					<div id="dq3">
-						<p>端前端前端前端前</p>
-						<p>端前端前端前端前端前</p>
-						<p>端前端前端前</p>
-					</div>
-					<div id="dq4">
-						<p>What------<span>40%</span></p>
-						<p>What------<span>30%</span></p>
-						<p>What------<span>40%</span></p>
-					</div>
-				</div>
-			</div>
-			<div id="p3">
-				<div id="left">
-					<div id="tit">
-						<p><span id="span1">THE</span><span class="span2">TECHONOLOGE</span></p> 
-						<p><span class="span2">OF FRONT</span></p>
-						<p><span id="span3">前段技术领域</span></p>
-					</div>
-					<div id="word">
-						<span>前</span><p>端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端<img src="286.jpg" />端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前</p>
-						<p>端端端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端端前端前端前端前端前</p>
-						<p>前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前前端前端前端前端前端前端端前端前端前端前端前端前端前端端前端前</p>
-					</div>
-					
-				</div>
-				<div id="right">
-					<div id="r1">
-						<div id="shadow">
-							<div id="le">
-								<span id="s1">前端技术</span>
-								<span id="s2">前端技术前端技术</span>
-							</div>
-						</div>
-					</div>
-					<div id="r2">
-						<div id="ali">
-							<p>▲<span class="lef">前端前端前端前端前端</span>---------------<span class="rig">前端</span></p>
-							<p>▲<span class="lef">前端前端前端前端前端</span>---------------<span class="rig">前端</span></p>
-							<p>▲<span class="lef">前端前端前端前端前端前端</span>--------<span class="rig">前端</span></p>
-						</div>
-						<div id="red">
-							<div id="num0">0</div>
-							<div id="ott">
-								<div id="num15">
-									<p>ONE TWO </p>
-									<p>THREE FORE FIVE</p>
-								</div>
-								<div id="hello">
-									<p>hello world hello world hello world</p>
-								</div>
-							</div>
-						</div>
-						<div id="world">
-							<span class="yh" id="sy">“</span>
-							<p>hello world hello world world hello world hello world hello world hello world hello world hello world hello world</p>
-							<span class="yh" id="xy">”</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="last">ife.baidu.com</div>
-		</div>
-	</body>
-</html>
