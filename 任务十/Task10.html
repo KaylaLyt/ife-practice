@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Task10</title>
+		<style>
+			.container{
+				display: flex;
+				padding: 20px;
+				background-color: #000000;
+				border: 1px black solid;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				min-width: 640px;
+			}
+			.flex1{
+				width: 150px;
+				height: 120px;
+				border: 1px #f00 solid;
+			}
+			.flex2{
+				width: 150px;
+				height: 100px;
+				border: 1px #f00 solid;
+			}
+			.flex3{
+				width: 150px;
+				height: 40px;
+				border: 1px #f00 solid;
+			}
+			.flex4{
+				width: 150px;
+				height: 200px;
+				border: 1px #0f0 solid;
+			}
+			@media all and (max-width: 640px) {
+				.fle4{
+					order: -1;
+				}
+				.container{
+					flex-wrap: wrap;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="flex1"></div>
+			<div class="flex2"></div>
+			<div class="flex3"></div>
+			<div class="flex4"></div>
+		</div>
+	</body>
+</html>
