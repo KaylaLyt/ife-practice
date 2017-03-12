@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3新特性</title>
+		<link rel="stylesheet" type="text/css" href="task12.css">
+	</head>
+	<body>
+		<div>
+			<table>
+				<tr id="top">
+					<th>排名</th>
+					<th>网站</th>
+					<th>热度</th>
+				</tr>
+				<tr class="ott">
+					<td>1</td>
+					<td>百度前端技术学院</td>
+					<td>13300</td>
+				</tr>
+				<tr class="double ott">
+					<td>2</td>
+					<td>百度前端技术学院</td>
+					<td>13300</td>
+				</tr>
+				<tr class="ott">
+					<td>3</td>
+					<td>百度前端技术学院</td>
+					<td>13000</td>
+				</tr>
+				<tr class="double">
+					<td>4</td>
+					<td>百度前端技术学院</td>
+					<td>12000</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>百度前端技术学院</td>
+					<td>11000</td>
+				</tr>
+				<tr class="double">
+					<td>6</td>
+					<td>百度前端技术学院</td>
+					<td>10100</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>百度前端技术学院</td>
+					<td>9000</td>
+				</tr>
+				<tr class="double">
+					<td>8</td>
+					<td>百度前端技术学院</td>
+					<td>4000</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>百度前端技术学院</td>
+					<td>3000</td>
+				</tr>
+				<tr class="double">
+					<td>10</td>
+					<td>百度前端技术学院</td>
+					<td>2000</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<input type="text" /><br />
+			<input type="text" id="lig" />
+		</div>
+		<!--<input type="radio" id="btn-3" name="slide" value="3" checked="checked"> 
+		<input type="radio" id="btn-2" name="slide" value="2" checked="checked"> 
+		<input type="radio" id="btn-1" name="slide" value="1" checked="checked"> 
+		<div class="slide-container"> 
+			<ul class="banner-slide clearfix"> 
+				<li>1</li> 
+				<li>2</li> 
+				<li>3</li> 
+			</ul> 
+			<div class="switch-btn"> 
+				<label for="btn-1">1</label> 
+				<label for="btn-2">2</label> 
+				<label for="btn-3">3</label> 
+			</div> 
+		</div> -->
+		<div id="box">
+			<button onmouseover="tothree()">3</button>
+			<button onmouseover="totwo()">2</button>
+			<button onmouseover="toone()">1</button>
+		</div>
+		<script>
+			function toone(){
+				document.getElementById("box").style.backgroundColor="green";
+			}
+			function totwo(){
+				document.getElementById("box").style.backgroundColor="red";
+			}
+			function tothree(){
+				document.getElementById("box").style.backgroundColor="blue";
+			}
+		</script>
+	</body>
+</html>
