@@ -1,0 +1,154 @@
+body{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+#title{
+	background-color: rgb(145,212,218);
+	font-family: "SimHei";
+	height: 113px;
+	color: white;
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+}
+#title a{
+	float: left;
+	-webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+	position: relative;
+	margin: 15px;
+}
+#title a span{
+	float: left;
+	position: relative;
+	margin-top: 30px;
+}
+#title img{
+	float: left;
+	position: relative;
+	margin: 15px;
+}
+#title h1{
+	float: right;margin: 0;
+	margin-right: 40%;	
+	margin-top: 2.1%;
+}
+#nav{
+	width: 100%;
+	overflow: hidden;
+	height: 90px;
+}
+ul li{
+	list-style: none;
+}
+#nav li{
+	font-size: 2em ;
+	font-weight: bold;
+	display: block;
+	width: 20%;
+	float: right;
+	text-align: center;
+}
+#active{
+	height: 72px;
+	border-bottom: 2px  rgb(145,212,218) solid;
+}
+#pic img{
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+#lables li{
+	float: left;
+	width: 20%;
+	margin-top: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+#lables{
+	height: 220px;
+	border-bottom: 4px solid rgb(229,229,229);
+}
+#columns{
+	/*overflow: hidden;*/
+	width: 91.5%;
+	height: 330px;
+	padding: 4%;
+}
+.column{
+	float: left;
+	width: 32%;
+	text-align: center;
+	height: 350px;
+}
+.column2{
+	border-left: 2px solid rgb(229,229,229);
+	border-right: 2px solid rgb(229,229,229);
+	margin: 0px 1.5%;
+}
+.column h2{
+	font-size: 2em;
+}
+.column h3{
+	color: grey;
+}
+#models{
+	height: 1670px;
+}
+.model{
+	height: 650px;
+	width: 87%;
+	padding: 6%;
+}
+.model header{
+	font-size: 2em;
+	border-bottom: 2px solid rgb(229,229,229);
+}
+.forth{
+	height: 300px;
+	margin: 2% 0px;
+}
+.model img{
+	float: left;
+	height: 300px;
+}
+table{
+	margin-left: 5%;
+	height: 300px;
+	width: 70%;
+}
+table tr td{
+	background-color: rgb(229,229,229);
+	height: 120px;
+	width: 50%;
+	text-align: center;
+	font-weight: bold;
+}
+.kongbai{
+	height: 50px;
+	width: 100%;
+	background: rgb(229,229,229);
+}
+#articles{
+	width: 87%;
+	padding: 6%;
+}
+.simi img{
+	float: left;
+	height: 200px;
+}
+.simi{
+	padding-bottom: 3%;
+}
+.word{
+	height: 200px;
+	border-bottom: 2px solid rgb(229,229,229);
+	
+}
+header{
+	font-size: 2em;
+}
+aside{
+	color: rgb(183,183,183);
+}
