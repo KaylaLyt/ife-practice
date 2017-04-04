@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组增改</title>
+		<style type="text/css">
+			.shift{
+				background: white;
+				color: black;
+			}
+			.push{
+				background: black;
+				color: white;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				position: relative;
+				float: left;
+				width: 30px;
+				height: 30px;
+				background: red;
+				color: white;
+				margin: 10px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"  id="put"/>
+		<input type="button" class="shift" id="left-shift" value="左侧入"  />
+		<input type="button" class="push" id="left-push" value="左侧出"  />
+		<input type="button" class="shift" id="right-shift" value="右侧入"  />
+		<input type="button" class="push" id="righ-push" value="右侧出"  />
+		<ul>
+			<li>10</li>
+			<li>3</li>
+			<li>7</li>
+			<li>12</li>
+			<li>11</li>
+			<li>30</li>
+		</ul>
+		
+		<script>
+			var leftin=document.getElementById("left-shift");
+			var rightin=document.getElementById("right-shift");
+			var leftout=document.getElementById("left-push");
+			var rightout=document.getElementById("righ-push");
+			var lists=document.getElementsByTagName("ul");
+			var newlist=document.createElement("li");
+			var list=document.getElementsByTagName("li");
+			
+			function add(){
+				var textin=document.createTextNode(put.value);
+				newlist.appendChild(textin);
+			}
+			
+			leftin.onclick = function(){
+				add();
+				lists[0].insertBefore(newlist,lists[0].childNodes[0]);
+			}
+			rightin.onclick = function(){
+				add();
+				lists.appendChild(newlist);
+			}
+			leftout.onclick = function(){
+				lists.removeChild(lists.childNodes[0]);
+			}
+			rightout.onclick = function(){
+				var i = list.length-1;
+				lists.removeChild(lists.ChildNodes[i]);
+			}
+		</script>
+	</body>
+</html>

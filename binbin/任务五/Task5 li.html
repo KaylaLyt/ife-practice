@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高度表示数字大小</title>
+		<style type="text/css">
+			.shift{
+				background: white;
+				color: black;
+			}
+			.push{
+				background: black;
+				color: white;
+			}
+			ul{
+				list-style: none;
+				display: block;
+				height: 500px;
+				overflow: hidden;
+			}
+			li{
+				position: relative;
+				float: left;
+				width: 30px;
+				height: 30px;
+				background: red;
+				color: white;
+				margin: 1px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+    <input type="number" id="number">
+
+	<button id="left-in">左侧入</button>
+
+	<button id="right-in">右侧入</button>
+
+	<button id="left-out">左侧出</button>
+
+	<button id="right-out">右侧出</button>
+
+	<button id="figure">列表</button>
+
+	<button id="compare">排序</button>
+		<ul id="list">
+			<li style="height: 50px;">10</li>
+			<li style="height: 450px;">90</li>
+			<li style="height: 85px">17</li>
+			<li style="height: 60px">12</li>
+			<li style="height: 500px">100</li>
+			<li style="height: 150px">30</li>
+		</ul>
+		
+		<div id="form"></div>
+		
+		<div id="compares"></div>
+		
+	</body>
+	<script type="text/javascript">
+	var left = document.getElementById("left-in");
+
+	var right = document.getElementById("right-in");
+
+	var turnleft = document.getElementById("left-out");
+
+	var turnright = document.getElementById("right-out");
+
+	var list = document.getElementById("list");
+
+	var newlist = document.createElement("li");
+
+	var figure = document.getElementById("figure");
+
+	var form = document.getElementById("form");
+
+	var compare = document.getElementById("compare");
+
+	var compares = document.getElementById("compares");
+
+
+
+	function newItem(){
+
+	
+
+		var textNode = document.createTextNode(number.value);
+
+		if(number.value>9&&number.value<101){
+
+			newlist.appendChild(textNode);
+
+		}else{
+
+			alert("您输入数值范围不正确");
+
+		}
+
+	}
+
+
+
+	
+
+	left.onclick = function (){
+
+		newItem();
+
+		list.insertBefore(newlist,list.childNodes[0]);
+
+	}
+
+
+
+	right.onclick = function(){
+
+		newItem();
+
+		list.appendChild(newlist);
+
+	}
+
+
+
+	turnleft.onclick = function(){
+
+		list.removeChild(list.childNodes[0]);
+
+	}
+
+
+
+	turnright.onclick = function(){
+
+		var i = list.childNodes.length-1;
+
+		list.removeChild(list.childNodes[i]);
+
+	}
+
+
+
+	figure.onclick = function(){
+
+		var lists = document.getElementsByTagName("li");
+
+		
+
+		for(var j=0;j<lists.length;j++){
+
+			var a =document.createElement("p");
+
+			a.style.width = "20px";
+
+			var b = lists[j].innerText;
+
+			
+
+			a.style.height = b*4+"px";
+
+			a.style.background = "yellow";
+
+			a.style.left = j*25 +"px";
+
+			form.appendChild(a);
+
+		}
+
+		
+
+	}
+
+
+
+	compare.onclick = function(){
+
+		var a = [];
+
+		var lists = document.getElementsByTagName("li");
+		
+		function sortNumber(a,b)
+		{
+			return a - b;
+		}
+
+		for(var k = 0;k<lists.length;k++){
+
+			a.push(lists[k].innerText);
+
+			a.sort(sortNumber);
+
+		}
+
+		for(var l=0;l<a.length;l++){
+
+			var b = document.createElement('span');
+			
+			b.style.display="block";
+
+			b.innerText = a[l];
+
+			console.log(b);
+
+			compares.appendChild(b);
+
+		}
+
+		
+
+
+
+		
+
+	}
+    </script>
+</html>

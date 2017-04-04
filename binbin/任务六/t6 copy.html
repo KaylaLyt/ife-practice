@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Practise107</title>
+
+	<link rel="stylesheet" type="text/css" href="styles/practise107.css">
+<style>
+	*{
+
+	margin: 0;
+
+	padding: 0;
+
+	list-style: none;
+
+}
+
+
+
+.container{
+
+	position: relative;
+
+	width: 800px;;
+
+	height: 600px;
+
+	background-color: #cae;
+
+	margin: 200px auto;
+
+}
+
+
+
+textarea{
+
+	margin: 10px;
+
+	color: #ccc;
+
+	width: 300px;
+
+	height: 200px;
+
+	padding: 15px;
+
+	text-decoration: none;
+
+	border-radius: 5px;
+
+	font-size: 16px;
+
+}
+
+
+
+button{
+
+	border: none;
+
+	width: 80px;
+
+	height: 35px;
+
+	border-radius: 10px;
+
+	font-size: 18px;
+
+	background-color: #8a9;
+
+	color: #eee;
+
+	text-align: center;
+
+	margin: 10px;
+
+}
+
+
+
+input{
+
+	width:300px;
+
+	height: 20px;
+
+	border-radius: 5px;
+
+	margin-left: 10px;
+
+}
+
+
+
+span{
+
+	width: 20px;
+
+	height: 20px;
+
+	padding: 5px;
+
+	color: #5e8;
+
+	font-size: 18px;
+
+}
+</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+	<textarea id="content">格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔</textarea>
+
+	<button id="imports">批量输入</button></br>
+
+	<input type="" name="" id="source">
+
+	<button id="search">查询</button>
+
+
+
+	<ul id="list">
+
+		
+
+	</ul>
+
+<script>
+
+<-!<textarea id="content">格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔</textarea>
+
+	<button id="imports">批量输入</button></br>
+
+	<input type="" name="" id="source">
+
+	<button id="search">查询</button>-->
+
+var imports =document.getElementById("imports");
+
+
+
+var list = document.getElementById("list");
+
+var source = document.getElementById("source");
+
+var search = document.getElementById("search");
+
+
+
+imports.onclick = function(){
+
+	var content = document.getElementById('content').value;
+
+	sums = content.split("[、，。；？！,.;?!]");
+
+	for (var i = 0 ; i <sums[0].length; i++) {
+
+		var newlist = document.createElement('span');
+
+		newlist.innerText = sums[0][i];
+
+		list.appendChild(newlist);
+
+	}
+
+}
+
+
+
+search.onclick = function(){
+
+	var text = source.value.trim();
+
+	var texts = text.split('');
+
+	for(var i = 0 ; i <sums[0].length; i++){
+
+		for(var j = 0;j<texts.length;j++){
+
+			if(texts[j]==sums[0][i]){
+
+
+
+				list.childNodes[i+1].style.color = "red"; //查找的结果字体变红
+
+			}
+
+		}
+
+	}
+
+}
+</script>
+</body>
+
+</html>
