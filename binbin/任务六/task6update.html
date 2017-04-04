@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>task6</title>
+		<style>
+		button{
+			background-color: dodgerblue;
+			color: white;
+			border-radius: 5px;
+			border: none;
+			height: 30px;
+			width: 70px;
+			}
+		input{
+			width:300px;
+			border-radius: 5px;
+			border: solid gray 1px;
+		}
+		li{
+			list-style: none;
+			background: red;
+		}
+		</style>
+	</head>
+	<body>
+		<!--
+        	基于任务四进行升级
+			将新元素输入框从input改为textarea
+			允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），
+		顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔
+			增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，
+			将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识
+        -->
+        <div id="main">
+        <textarea placeholder="请随意输入"></textarea>
+        <button id="left-in">左入</button>
+        <button id="right-in">右入</button>
+        <button id="left-out">左出</button>
+        <button id="right-out">右出</button>
+        <input type="text"> </input>
+        <button id="check">查询</button>
+        <ul id="list"></ul>
+        <p></p>
+        </div>
+    <script type="text/javascript">
+    	var input = document.getElementsByTagName('textarea')[0];
+		var oUl = document.getElementById('list');
+		var p=document.getElementsByTagName('p');
+		    // 事件代理
+
+    main.onclick = function () {
+
+        var e = arguments[0] || window.event;
+
+        var target = e.target || e.srcElement;
+
+        if (target.nodeName.toLowerCase() === 'button') {
+
+            if (target.id === 'left-in') {
+
+                addNum(true);
+
+            }
+
+            if (target.id === 'right-in') {
+
+                addNum(false);
+
+            }
+
+            if (target.id === 'left-out') {
+
+                delNum(true);
+
+            }
+
+            if (target.id === 'right-out') {
+
+                delNum(false);
+
+            }
+
+            if (target.id === 'bubble-sort') {
+
+                bubbleSort();
+
+            }
+
+            if (target.id === 'check') {
+
+                check();
+
+            }
+
+        }
+
+        else if (target.nodeName.toLowerCase() === 'li') {
+
+            oUl.removeChild(target);
+
+        }
+
+    };
+		
+		function check() {
+
+        var oLi = oUl.getElementsByTagName('li');
+
+        var strArr = [];
+
+        var value = document.getElementsByTagName('input')[0].value;
+
+        var reg = new RegExp(value);
+
+        for (var i = 0; i < oLi.length; i++) {
+
+            oLi[i].style.color = "black";
+
+            if (value && reg.test(oLi[i].innerHTML)) {
+
+                oLi[i].style.color = "white";
+
+            }
+
+        }
+
+    }
+		
+		function addNum(positive) {
+
+        var inputNum = input.value.split(/\s+|,|，|　|\n|、|。/); // 拆分输入
+
+        inputNum = inputNum.filter(function(val) {
+
+            return val !== '';
+
+        });
+
+        if (!inputNum) return false;
+
+
+
+        var li;
+
+        if (positive) {
+
+            for (var i = inputNum.length - 1; i >= 0; i--) {
+
+                li = document.createElement('li');
+
+                li.innerHTML = inputNum[i];
+
+                p.innerHTML = '';
+
+                oUl.insertBefore(li, oUl.childNodes[0]);
+
+            }
+
+        }
+
+        else {
+
+            for (var j = 0; j < inputNum.length; j++) {
+
+                li = document.createElement('li');
+
+                li.innerHTML = inputNum[j];
+
+                p.innerHTML = '';
+
+                oUl.appendChild(li);
+
+            }
+
+        }
+
+
+
+        // input.value = '';
+
+    }
+
+
+
+    // 删除数字
+
+    /**
+
+     * 删除数字
+
+     * @param  {boolean} positive 确定从左右删除
+
+     * @return {[type]}          [description]
+
+     */
+
+    function delNum(positive) {
+
+        if (oUl.childNodes.length) {
+
+            p.innerHTML = '';
+
+            if (positive) {
+
+                oUl.removeChild(oUl.firstChild);
+
+            }
+
+            else {
+
+                oUl.removeChild(oUl.lastChild);
+
+            }
+
+        }
+
+    }
+
+
+
+    // 判断输入是否为数字
+
+    function isNum(data) {
+
+        var bool = /^[\d\.]+$/.test(data);// 纯数字或小数
+
+        if (bool) {
+
+            return true;
+
+        }
+
+        else if (!data){
+
+            // alert("输入不能为空!");
+
+            p.innerHTML = '输入不能为空!';
+
+            return false;
+
+        }
+
+        else {
+
+            // alert("请输入纯数字!");
+
+            p.innerHTML = '请输入纯数字!';
+
+            return false;
+
+        }
+
+    }
+
+
+
+    // 判断数字是否存在，存在就不加入
+
+    function hasNum(num, ele) {
+
+        var child = ele.childNodes;
+
+        for (var i = 0; i < child.length; i ++) {
+
+            if (child[i].style.height === num + 'px') return false; // 存在,注意判断逻辑无法用 !==
+
+        }
+
+        return true; // 不存在
+
+    }
+    </script>
+	</body>
+</html>
