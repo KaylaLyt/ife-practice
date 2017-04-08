@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task03</title>
+</head>
+<body>
+
+	<div onchange="radioChange()">
+		<label for="school"><input type="radio" name="school" id="school" checked>在校生</label>
+		<label for="unschool"><input type="radio" name="school" id="unschool">非在校生</label>
+	</div>
+
+	<div id="inschool">
+		<span>学校</span>
+		
+		<select id="select1" onchange="selt()">
+			<option value="bj">北京</option>
+			<option value="sh">上海</option>
+			<option value="hz">杭州</option>
+		</select>
+		
+		<select id="select2">
+			<option value="bj">北京大学</option>
+			<option value="sh">清华大学</option>
+			<option value="hz">北京航空航天大学</option>
+		</select>
+	</div>
+
+	<div id="outschool" class="hide">
+		<span>就业单位</span>
+		<input class="work" type="text">
+	</div>
+
+
+
+<script>
+
+        var school = document.getElementById('school');
+
+        var unschool = document.getElementById('unschool');
+
+        var radioChange = function () {
+
+
+
+            if (school.checked) {
+
+                document.getElementById('inschool').className = "";
+
+                document.getElementById('outschool').className = "hide";
+
+            }
+
+            if (unschool.checked) {
+
+                document.getElementById('inschool').className = "hide";
+
+                document.getElementById('outschool').className = "";
+
+            }
+
+        }
+
+        var selt = function () {
+
+            var data = {
+
+                bj: ["北京大学", "清华大学", "北京航空航天大学"],
+
+                sh: ["复旦大学", "上海交通大学", "同济大学"],
+
+                hz: ["浙江大学", "杭州电子科技大学", "浙江工业大学"]
+
+            }
+
+            var source = document.getElementById('select1');
+
+            var target = document.getElementById("select2");
+
+            var selected = source.options[source.selectedIndex].value;
+
+            target.innerHTML = '';
+
+            for(var i=0;i<data[selected].length;i++) {
+
+                var opt = document.createElement('option');
+
+                opt.value = data[selected][i];
+
+                opt.innerHTML = data[selected][i];
+
+                document.getElementById('select2').appendChild(opt);
+
+            }
+
+        }
+
+
+
+</script>
+
+</body>
+
+</html>
