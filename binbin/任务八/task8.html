@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript and tree2</title>
+    <style>
+    #root {
+        width: 95%;
+        height: 180px;
+    }
+    div {
+        display: table-cell;
+        padding: 1.5% 16px 2%;
+        width: 40%;
+        height: 85%;
+        text-align: center;
+        border: 1px solid black;
+        background-color: #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    button {
+        margin-right: 10px;
+        padding: 0;
+        height: 25px;
+        border-radius: 3px;
+        text-align: center;
+        line-height: 21px;
+    }
+    #button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        width: 500px;
+        border: none;
+        text-align: center;
+    }
+    p {
+        color: red;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+	<div id="root">
+	    <div>world
+	        <div>country
+	            <div>china</div>
+	            <div>usa</div>
+	            <div>uk</div>
+	        </div>
+	        <div>language
+	            <div>zh</div>
+	            <div>en</div>
+	            <div>jp</div>
+	            <div>ko</div>
+	        </div>
+	        <div>something
+	            <div>code</div>
+	            <div>php</div>
+	        </div>
+	    </div>
+		<div>many
+	        <div>color
+	            <div>black</div>
+	            <div>red</div>
+	            <div>blue</div>
+	            <div>pink</div>
+	        </div>
+	        <div>code
+	            <div>java</div>
+	            <div>c++</div>
+	            <div>sql</div>
+	        </div>
+	    </div>
+		<div>other</div>
+	</div>
+
+<div id="button">
+    <button id="pre">递归遍历</button>
+    <button id="nex">广度遍历</button>
+    <input type="text" placeholder="输入些什么！" size="20">
+    <button id="check">递归查询</button>
+    <button id="in">广度查询</button>
+</div>
+
+<p></p>
+
+<script>
+    var root = document.getElementById('root');
+    var input = document.getElementsByTagName('input')[0];
+    var arr = [];
+    var last;
+    var flag = true;
+
+    document.getElementById('button').onclick = function(ev) {
+        var event = ev || window.event;
+        var target = event.target || event.srcElement;
+        if (target.id === 'pre') {
+            if (flag) {
+                reset();
+                rec(root);
+                play(arr);
+            }
+        }
+
+        if (target.id === 'in') {
+            if (flag && input.value) {
+                reset();
+                sco(root);
+                check(arr);
+            }
+        }
+        if (target.id === 'nex') {
+            if (flag) {
+                reset();
+                sco(root);
+                play(arr);
+            }
+        }
+        if (target.id === 'check') {
+            if (flag && input.value) {
+                reset();
+                rec(root);
+                check(arr);
+            }
+        }
+    };
+
+    function reset() {
+        flag = false;
+        arr = [];
+        if (last) {
+            last.style.backgroundColor = '#fff';
+        }
+    }
+
+    function check(arr) {
+        var value = input.value;
+        var timer = setInterval(function() {
+            if (last) {
+                last.style.backgroundColor = '#fff';
+            }
+            var reg = new RegExp(value);
+            if (reg.test(arr[0].childNodes[0].nodeValue)) {
+                clearInterval(timer);
+                last = arr[0];
+                arr[0].style.backgroundColor = 'blue';
+                flag = true;
+                return;
+            }
+
+			if (!arr.length) {
+                clearInterval(timer);
+                flag = true;
+                return;
+            }
+
+            last = arr.shift();
+            last.style.backgroundColor = 'red';
+            }, 500);
+    };
+
+    function play(arr) {
+        for(var i = 0; i < arr.length; i++) {
+            (function(i){
+                setTimeout(function() {
+                    if (last) {
+                        last.style.backgroundColor = '#fff';
+                    }
+                    if (i === arr.length - 1) {
+                        flag = true;
+                    }
+                    arr[i].style.backgroundColor = 'red';
+                    last = arr[i];
+                }, 500 * i);
+            })(i);
+        }
+    };
+
+    // 递归
+    function rec(node) {
+        if(node && node.nodeType === 1){
+            arr.push(node);
+        }
+        var i = 0, childNodes = node.childNodes;
+        for(; i < childNodes.length ; i++){
+            node = childNodes[i];
+            if(node.nodeType === 1){
+                rec(node);
+            }
+        }
+    }
+
+
+
+    //递归另一种
+
+/*    function walkDom(node, callback) {
+
+        if (!node) { //判断node是否为null
+
+            return
+
+        }
+
+        callback(node) //将node自身传入callback
+
+        node = node.firstElementChild //改变node为其子元素节点
+
+        while (node) {
+
+            walkDom(node, callback) //如果存在子元素，则递归调用walkDom
+
+            node = node.nextElementSibling //从头到尾遍历元素节点
+
+        }
+
+    }*/
+
+
+
+    //广度
+    function sco(node) {
+        if (node) {
+            var stack = [node];
+            var target;
+            while(stack.length) {
+                target = stack.shift();
+                arr.push(target);
+                Array.prototype.push.apply(stack, target.children);// 直接stack.push(target.children)会报错,target.children 是一个数组
+            }
+        }
+    }
+
+    //深度(递归)
+    function dep(node) {
+        if (node) {
+            var stack = [node];
+            var target;
+            while(stack.length) {
+                target = stack.shift();
+                arr.push(target);
+                Array.prototype.unshift.apply(stack, target.children);
+            }
+        }
+    }
+</script>
+
+</body>
+
+</html>
