@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>听指令的小方块1</title>
+		<style>
+			#big{
+				height: 530px;
+				width: 600px;
+			}
+			#small{
+				float: left;
+				width: 500px;
+				height: 500px;
+				border: 2px solid black;
+			}
+			#toptable{
+				border-collapse: collapse;
+				width: 500px;
+				height: 30px;
+				text-align: center;
+				font-size: x-large;
+				margin-left: 32px;
+			}
+			#toptable td{
+				width: 50px;
+			}
+			#lefttable{
+				float: left;
+				border-collapse: collapse;
+				width: 30px;
+				height: 500px;
+				text-align: center;
+				font-size: x-large;
+			}
+			#lefttable tr{
+				height: 50px;
+			}
+			#maintable{
+				border-collapse: collapse;
+				height: 500px;
+				width: 500px;
+			}
+			#maintable tr td{
+				border: 1px solid gainsboro;
+			}
+			.on{
+			background-color: red;
+			}
+			.top,.right,.bottom,.left{
+			position: relative;
+			}
+			.top::before{
+			content: '  ';
+			width: 42px;
+			height:10px;
+			background-color: blue;
+			position: absolute;
+			top:0;
+			left:0;
+			}
+			.right::before{
+			 content: '  ';
+
+            width: 10px;
+
+            height:42px;
+
+            background-color: blue;
+
+            position: absolute;
+
+            top:0;
+
+            right:0;
+
+        }
+
+        .bottom::before{
+
+            content: '  ';
+
+            width: 42px;
+
+            height:10px;
+
+            background-color: blue;
+
+            position: absolute;
+
+            bottom:0;
+
+            left:0;
+
+        }
+
+        .left::before{
+
+            content: '  ';
+
+            width: 10px;
+
+            height:42px;
+
+            background-color: blue;
+
+            position: absolute;
+
+            top:0;
+
+            left:0;
+
+        }
+
+        .mt20{
+			margin-left: 32px;
+            margin-top: 20px;
+
+        }
+		</style>
+	</head>
+	<body>
+		<table id="toptable">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+			</tr>
+		</table>
+		<div id="big">
+		<table id="lefttable">
+			<tr><td>1</td></tr>
+			<tr><td>2</td></tr>
+			<tr><td>3</td></tr>
+			<tr><td>4</td></tr>
+			<tr><td>5</td></tr>
+			<tr><td>6</td></tr>
+			<tr><td>7</td></tr>
+			<tr><td>8</td></tr>
+			<tr><td>9</td></tr>
+			<tr><td>10</td></tr>
+		</table>
+		<div id="small">
+		<table id="maintable">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="on top"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		</div>
+		</div>
+		<div class="mt20">
+		<input type="text" id="event" />
+		<button id="go">执行</button>
+		<input id="run" type="button" value="go">
+		<input id="left" type="button" value="left">
+		<input id="right" type="button" value="right">
+		</div>
+	</body>
+	<script>
+
+    (function (window) {
+		
+		var td = document.getElementsByTagName('td');
+		var go = function () {
+			for (var i=0;i<td.length;i++) {
+				if (td[i].className == 'on top'){
+					if(i>=10){
+						td[i].className='';
+						td[i-10].className='on top';
+					}
+					else {
+						alert('到头啦！')
+					}
+				}
+				else if (td[i].className == 'on right'){
+					if(i%10!=9){
+						td[i].className='';
+						td[i+1].className='on right';
+						break;
+					}
+					else {
+						alert('到头啦！')
+					}
+				}
+				else if (td[i].className == 'on bottom'){
+					if(i<=90){
+						td[i].className='';
+						td[i+10].className='on bottom';
+						break;
+					}
+					else {
+						alert('到头啦！')
+					}
+				}
+				else if (td[i].className == 'on left'){
+					if(i%10!=0){
+						td[i].className='';
+						td[i-1].className='on left';
+					}
+					else {
+						alert('到头啦！')
+					}
+				}
+			}
+		};
+
+        var goLeft = function () {
+			var onBox = document.getElementsByClassName('on')[0];
+			switch (onBox.className){
+				case 'on top':
+							onBox.className = 'on left';
+							break;
+
+            	case 'on left':
+              				onBox.className = 'on bottom';
+              				break;
+
+            	case 'on bottom':
+            				onBox.className = 'on right';
+            				break;
+            				
+            	case 'on right':
+            				onBox.className = 'on top';
+            				break;
+            }
+		};
+
+		var goRight = function () {
+			var onBox = document.getElementsByClassName('on')[0];
+			switch (onBox.className){
+				case 'on top':
+					onBox.className = 'on right';
+					break;
+					
+				case 'on left':
+					onBox.className = 'on top';
+					break;
+					
+				case 'on bottom':
+					onBox.className = 'on left';
+					break;
+				
+				case 'on right':
+					onBox.className = 'on bottom';
+					break;
+			}
+		};
+
+		var goButton = document.getElementById('go');
+		var runButton = document.getElementById('run');
+		var leftButton = document.getElementById('left');
+		var rightButton = document.getElementById('right');
+		runButton.onclick = function () {
+			go();
+		}
+		leftButton.onclick = function () {
+			goLeft();
+		}
+		rightButton.onclick = function () {
+			goRight();
+		}
+		goButton.onclick = function () {
+			var event = document.getElementById('event').value.toUpperCase();
+			switch (event){
+				case 'GO':
+					go();
+					break;
+
+                case 'TUN LEF':
+	                goLeft();
+	                break;
+
+                case 'TUN RIG':
+	                goRight();
+	                break;
+			}
+		};
+
+    })(window)
+
+</script>
+</html>
