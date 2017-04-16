@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI组件之浮出层</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            padding-top: 10px;
+        }
+        #btn {
+            margin: 0 auto;
+            border: 1px solid grey;
+            border-radius: 4px;
+            width: 80px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .content p {
+            margin: 20px auto;
+            border: 2px solid green;
+            border-radius: 5px;
+            width: 800px;
+        }
+        .container {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .ui {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) ;
+            -moz-transform: translate(-50%, -50%) ;
+            -ms-transform: translate(-50%, -50%) ;
+            -o-transform: translate(-50%, -50%) ;
+            transform: translate(-50%, -50%) ;
+            border: 2px solid grey;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .title {
+            border-bottom: 2px solid grey;
+        }
+        .title p {
+            margin: 10px auto;
+            width: 100%;
+            text-align: center;
+        }
+        .mid {
+            padding: 10px 0;
+            border-bottom: 2px solid grey;
+        }
+        .foot {
+            padding: 10px 0;
+            text-align: right;
+        }
+        button {
+            margin-right: 15px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            width: 60px;
+            line-height: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<div class="container" id="outBox">
+	    <div class="ui" id="show">
+	        <div class="title" id="drag">
+	            <p>浮出层</p>
+	        </div>
+	        <div class="mid">
+	            <p>美人骨，世间罕见。
+				有骨者，而未有皮，有皮者，而未有骨。
+				世人大多眼孔浅显，只见皮相，未见骨相。
+	            </p>
+	        </div>
+	        <div class="foot">
+	            <button id="close">确认</button>
+	            <button>取消</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="main">
+	    <button id="btn">浮出层</button>
+		<div class="content">
+			<p>十年修得柯景腾（《那些年，我们一起追过的女孩》），百年修得慕容沣（《来不及说我爱你》），
+				千年修得陆励成（《最美的时光》），万年修得何以琛（《何以笙箫默》），
+				亿年修得周生辰（《一生一世，美人骨》）。</p>
+			<p>一直喜欢一心一意的爱情，如果几世轮回，都是同一个人，多好。我不相信一见钟情，却相信，
+				终会遇到一个人，让你愿意爱得生生世世。就像时宜对周生辰。</p>
+			<p>很喜欢《一生一世，美人骨》中的周生辰，是理想型男友楷模。不仅智商高，情商更是超前，
+				脸不必长得太好看，看着干净、舒适即可，最重要的是，他眼里只容得下时宜。</p>
+			<p>很喜欢墨宝非宝的小说，看完前面几部，忍不住，又去看了《一生一世，美人骨》。
+				缓慢述说的故事才可以流淌进心底，让人忍不住就被故事里清淡又坚定的感情所打动。
+				这本是墨宝非宝所有作品中最喜欢的，没有之一。</p>
+			<p>一人许诺，一人不悔……而她对他，就如棋局：无论生死，落子无悔。——记《一生一世，美人骨》</p>
+			<p>我好像，真的很爱周生辰。那种即使付出所有心力去爱，也会感觉无比安心的爱人，和爱情。</p>
+			<p>《一生一世，美人骨》，就像一盅文火慢炖的高汤，慢慢悠悠的，说着一段带着两世记忆的爱情。
+				这样不紧不慢、娓娓道来却让人觉得精彩，是很考验作者的文字功底的。前有顾漫，现有墨宝非宝。</p>
+			<p>我二十六岁才遇到他，就算幸运可以活到八十岁，也只剩了五十四年，一万九千七百一十天。
+				你也说了，他是做研究的，很容易就像现在这样离开几个月，或许真正在一起的时间，只有不到一万天，
+				我没时间，没时间用心思、用技巧，我要争分夺秒和他在一起，知道吗？</p>
+			<p>曾经的她和他，隔着师徒的名份，隔着她早有的指腹婚约。自七岁至十七岁，琴棋书画，为人处世，
+				甚至每一卷书，每一句诗词，都是他所教授。从懵懂无知，到深入骨髓。</p>
+			<p>你肯定想错了，周生辰，想错了我的意思。我想的是，等到你把要做的事情做完，
+				你只需要每天去研究你的金星，余下的都交给我。我给你做饭、泡茶，妥善照顾，免你累，免你苦，
+				免你四处奔波，免你无人倚靠。</p>
+			<p>藏书楼内，有她未曾写完的诗。 她私心里甚至将它当作了秘密。后来渐渐大了些，她方才懂得，
+				这句词的真正意思：女以色授，男以魂与，情投意合，心倾于侧。</p>
+			<p>我想，我应该是用一身美人骨，换了你的倾国倾城，换了你能记得我，换了你能开口，叫我的名字。</p>
+			<p>我不记得，但我都相信。时宜，你所有写下来的，我都相信。</p>
+			<p>浮生若梦，为欢几何？千载荒凉，白骨成沙，独有时宜，为我所求。</p>
+	    </div>
+	</div>
+
+<script>
+
+	function $(id) {
+		return document.getElementById(id);
+		var close=document.getElementsByClassName('close');
+	}
+	
+	$('btn').onclick = function(e) {
+		$('outBox').style.display = 'block';
+		e.stopPropagation(); // 取消冒泡
+	};
+	
+	$('show').onclick = function(e) {
+		e.stopPropagation(); // 取消冒泡
+	};
+	
+	$('outBox').onclick = function() {
+		$('outBox').style.display = 'none';
+	
+	};
+	
+	$('close').onclick = function() {
+		$('outBox').style.display = 'none';
+	};
+
+</script>
+</body>
+</html>
